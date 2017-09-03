@@ -1,0 +1,24 @@
+
+<div class="row">
+  <ul class="list-unstyled list-group">
+    <li ui-sref="katakanaShow({ id: test.id })" ng-repeat="test in vm.tests" class="list-group-item list-group-item-action">
+      <div class="row">
+
+      <div class="col-6 col-sm-5 col-md-4">
+          <h4 >{{ test.name }}</h4>
+      </div>
+
+
+      <div class="col-6 col-sm-7 col-md-8">
+        <ul class="list-unstyled list-inline">
+          <li ng-repeat="character in test.characters" class="list-inline-item">
+            <p>{{ character.symbol }}</p>
+          </li>
+        </ul>
+      </div>
+
+
+      </div>
+    </li>
+  </ul>
+</div>

@@ -43,13 +43,13 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
   })
   .state('katakanaIndex', {
     url: '/katakana',
-    templateUrl: '/js/views/katakana/index.html',
+    templateUrl: '/js/views/katakana/katakana-index.html',
     controller: 'KatakanaIndexCtrl',
     controllerAs: 'vm'
   })
   .state('katakanaShow', {
     url: '/katakana/:id',
-    templateUrl: '/js/views/katakana/show.html',
+    templateUrl: '/js/views/katakana/katakana-show.html',
     controller: 'KatakanaShowCtrl',
     controllerAs: 'vm'
   })
