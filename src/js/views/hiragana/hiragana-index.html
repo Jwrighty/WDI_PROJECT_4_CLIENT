@@ -1,6 +1,6 @@
 
 <div class="row">
-  <div class="col-12 mx-auto">
+  <div class="col-6 mx-auto">
     <ul class="list-unstyled list-group">
       <li ui-sref="hiraganaShow({ id: test.id })" ng-repeat="test in vm.tests | limitTo : 10:0" class="list-group-item list-group-item-action">
         <div class="row">
@@ -24,8 +24,8 @@
   <div class="col-6 mx-auto">
     <ul class="list-unstyled list-group">
       <li ui-sref="hiraganaShow({ id: test.id })" ng-repeat="test in vm.tests | limitTo : 1:10" class="list-group-item list-group-item-action">
-        <div class="col-6 col-sm-5 col-md-4">
-          <h4 class="testname">{{ test.name }}</h4>
+        <div class="col-12">
+          <h4 class="testname">Test: {{ test.name }}</h4>
         </div>
       </li>
     </ul>

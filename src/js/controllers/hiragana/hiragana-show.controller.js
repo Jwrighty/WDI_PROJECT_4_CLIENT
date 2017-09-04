@@ -12,7 +12,6 @@ function HiraganaShowCtrl(Test, $stateParams, Score, CurrentUserService) {
   vm.points = 0;
   vm.tries = 0;
   vm.result = '';
-  vm.score = { user_id: CurrentUserService.currentUser, test_id: vm.test.id , value: vm.points };
 
   Test
   .get({ id: $stateParams.id})
@@ -23,24 +22,27 @@ function HiraganaShowCtrl(Test, $stateParams, Score, CurrentUserService) {
   });
 
   function setQuestion() {
-    vm.chosenCharacter = vm.test.characters[Math.floor(Math.random() * vm.test.characters.length)];
-    vm.question = vm.chosenCharacter.symbol;
-  }
-
-  function checkAnswerTest() {
-    if (vm.test.characters.length === 0) {
+    if (vm.test.characters.length < 1) {
+      vm.score = { user_id: CurrentUserService.currentUser.id, test_id: vm.test.id , value: vm.points };
       Score
       .save({ score: vm.score })
       .$promise
       .then(() => {
-        console.log('You scored ', vm.score);
+        console.log('End of test, you scored', vm.points );
+        vm.result = `Well done you got ${vm.points} correct`;
       });
     } else {
-      const index = vm.test.characters.indexOf(vm.chosenCharacter);
-      vm.test.characters.splice(index, 1);
+      vm.chosenCharacter = vm.test.characters[Math.floor(Math.random() * vm.test.characters.length)];
+      vm.question = vm.chosenCharacter.symbol;
     }
+  }
+
+  function checkAnswerTest() {
+    const index = vm.test.characters.indexOf(vm.chosenCharacter);
+    vm.test.characters.splice(index, 1);
     if (vm.answer === vm.chosenCharacter.romaji) {
       vm.points += 1;
+      vm.tries +=1;
       vm.answer = '';
       vm.result = 'Correct';
       setQuestion();
@@ -49,7 +51,6 @@ function HiraganaShowCtrl(Test, $stateParams, Score, CurrentUserService) {
       vm.result = 'Wrong';
       setQuestion();
     }
-    // if vm.test.characters.length === 0 run .save and pass object
   }
 
   function checkAnswerPractice() {

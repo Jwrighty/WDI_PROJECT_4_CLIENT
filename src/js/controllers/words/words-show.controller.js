@@ -1,9 +1,9 @@
 angular
 .module('GoGenki')
-.controller('KatakanaShowCtrl', KatakanaShowCtrl);
+.controller('WordsShowCtrl', WordsShowCtrl);
 
-KatakanaShowCtrl.$inject = ['Test', '$stateParams', 'Score', 'CurrentUserService'];
-function KatakanaShowCtrl(Test, $stateParams, Score, CurrentUserService) {
+WordsShowCtrl.$inject = ['Test', '$stateParams', 'Score', 'CurrentUserService'];
+function WordsShowCtrl(Test, $stateParams, Score, CurrentUserService) {
   const vm = this;
 
   vm.test = [];
@@ -18,11 +18,12 @@ function KatakanaShowCtrl(Test, $stateParams, Score, CurrentUserService) {
   .$promise
   .then((data) => {
     vm.test = data;
+    console.log(vm.test);
     setQuestion();
   });
 
   function setQuestion() {
-    if (vm.test.characters.length < 1) {
+    if (vm.test.words.length < 1) {
       vm.score = { user_id: CurrentUserService.currentUser.id, test_id: vm.test.id , value: vm.points };
       Score
       .save({ score: vm.score })
@@ -32,15 +33,15 @@ function KatakanaShowCtrl(Test, $stateParams, Score, CurrentUserService) {
         vm.result = `Well done you got ${vm.points} correct`;
       });
     } else {
-      vm.chosenCharacter = vm.test.characters[Math.floor(Math.random() * vm.test.characters.length)];
-      vm.question = vm.chosenCharacter.symbol;
+      vm.chosenWord = vm.test.words[Math.floor(Math.random() * vm.test.words.length)];
+      vm.question = vm.chosenWord.symbol;
     }
   }
 
   function checkAnswerTest() {
-    const index = vm.test.characters.indexOf(vm.chosenCharacter);
-    vm.test.characters.splice(index, 1);
-    if (vm.answer === vm.chosenCharacter.romaji) {
+    const index = vm.test.words.indexOf(vm.chosenWord);
+    vm.test.words.splice(index, 1);
+    if (vm.answer === vm.chosenWord.romaji) {
       vm.points += 1;
       vm.tries +=1;
       vm.answer = '';
@@ -54,7 +55,7 @@ function KatakanaShowCtrl(Test, $stateParams, Score, CurrentUserService) {
   }
 
   function checkAnswerPractice() {
-    if (vm.answer === vm.chosenCharacter.romaji) {
+    if (vm.answer === vm.chosenWord.romaji) {
       vm.points += 1;
       vm.tries +=1;
       vm.answer = '';
@@ -68,7 +69,7 @@ function KatakanaShowCtrl(Test, $stateParams, Score, CurrentUserService) {
   }
 
   function checkAnswer(){
-    if (vm.test.name === 'All Katakana') {
+    if (vm.test.name === 'All Words') {
       checkAnswerTest();
     } else {
       checkAnswerPractice();

@@ -55,13 +55,13 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
   })
   .state('wordsIndex', {
     url: '/words',
-    templateUrl: '/js/views/words/index.html',
+    templateUrl: '/js/views/words/words-index.html',
     controller: 'WordsIndexCtrl',
     controllerAs: 'vm'
   })
   .state('wordsShow', {
     url: '/words/:id',
-    templateUrl: '/js/views/words/show.html',
+    templateUrl: '/js/views/words/words-show.html',
     controller: 'WordsShowCtrl',
     controllerAs: 'vm'
   });
