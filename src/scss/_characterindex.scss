@@ -1,0 +1,42 @@
+.list-group {
+  margin-top: 30px;
+}
+
+.testname {
+
+  margin-bottom: 0px;
+}
+
+/* xs < 768 */
+@media screen and (max-width: 767px) {
+    .testname, .index-character {
+        font-size: 0.9em;
+    }
+}
+
+/* sm */
+@media screen and (min-width: 768px) {
+    .testname, .index-character  {
+        font-size: 1.5em;
+    }
+}
+
+/* md */
+@media screen and (min-width: 992px) {
+    .testname, .index-character  {
+        font-size: 1.8em;
+    }
+}
+
+/* lg */
+@media screen and (min-width: 1200px) {
+    .testname, .index-character  {
+        font-size: 3em;
+    }
+}
+
+.index-character {
+  // font-size: 40px;
+  margin-bottom: 0px;
+  padding-left: 10px;
+}

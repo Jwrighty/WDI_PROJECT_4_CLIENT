@@ -1,4 +1,4 @@
-<h1>Register</h1>
+<!-- <h1>Register</h1>
 <div class="row">
   <div class="col-4">
     <form ng-submit="register.register()">
@@ -20,4 +20,40 @@
       <input class="btn btn-primary" type="submit" value="Submit" />
     </form>
   </div>
-</div>
+</div> -->
+
+<section class="register-block">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 register-sec">
+        <h2 class="text-center">Register Now</h2>
+        <form class="register-form" ng-submit="register.register()">
+          <div class="form-group">
+            <!-- <label for="exampleInputEmail1">Username</label> -->
+            <input class="form-control form-control-sm" type="text" name="username" ng-model="register.user.username" placeholder="Username">
+          </div>
+          <div class="form-group">
+            <!-- <label for="exampleInputPassword1">Email</label> -->
+            <input class="form-control form-control-sm" type="email" name="email" ng-model="register.user.email" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <!-- <label for="exampleInputPassword1">Profile Picture</label> -->
+              <input class="form-control form-control-sm" type="text" name="image" ng-model="register.user.image" placeholder="Image">
+          </div>
+          <div class="form-group">
+            <!-- <label for="exampleInputPassword1">Password</label> -->
+            <input class="form-control form-control-sm" type="password" name="password" ng-model="register.user.password" placeholder="Password">
+          </div>
+          <div class="form-group">
+            <!-- <label for="exampleInputPassword1">Confirm Password</label> -->
+            <input class="form-control form-control-sm" type="password" name="passwordConfirmation" ng-model="register.user.passwordConfirmation" placeholder="Password confirmation">
+          </div>
+          <input class="btn btn-primary float right" type="submit" value="Submit">
+        </form>
+      </div>
+      <div class="col-md-8 banner-sec">
+
+      </div>
+    </div>
+  </div>
+</section>
