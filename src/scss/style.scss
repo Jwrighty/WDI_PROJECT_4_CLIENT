@@ -14,6 +14,14 @@ body {
 
 .navbar-custom {
   background-color: #2e4355;
+  padding: 20px;
+  img {
+    margin-right: 10px;
+    margin-left: 60px;
+  }
+  .logout {
+    padding-right: 20px;
+  }
 }
 //
 // .container {
