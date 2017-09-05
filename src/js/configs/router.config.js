@@ -11,10 +11,10 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
     url: '/',
     templateUrl: '/js/views/homepage.html'
   })
-  .state('index', {
-    url: '/index',
-    templateUrl: '/js/views/user-home.html',
-    controller: 'IndexCtrl',
+  .state('usersShow', {
+    url: '/users/:id',
+    templateUrl: '/js/views/users/show.html',
+    controller: 'UsersShowCtrl',
     controllerAs: 'vm'
   })
   .state('register', {

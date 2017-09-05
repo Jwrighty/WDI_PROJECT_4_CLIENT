@@ -1,33 +1,38 @@
-
-<div class="row">
-  <div class="col-6 mx-auto">
-    <ul class="list-unstyled list-group">
-      <li ui-sref="katakanaShow({ id: test.id })" ng-repeat="test in vm.tests | limitTo : 10:11" class="list-group-item list-group-item-action">
-        <div class="row">
-          <div class="col-2 col-sm-5 col-md-4">
-            <h4 class="testname">{{ test.name }}</h4>
-          </div>
-          <div class="col-10 col-sm-7 col-md-8">
-            <ul class="list-unstyled list-inline ">
-              <li ng-repeat="character in test.characters" class="list-inline-item">
-                <p class="index-character">{{ character.symbol }}</p>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </li>
-    </ul>
+<div class="jumbotron jumbotron-fluid indexJumbotron">
+  <div class="container ">
+    <h1 class="display-3 text-white">Katakana</h1>
+    <p class="lead text-white">Practice the characters below and when you're ready, test yourself on the full set of 46 characters!</p>
   </div>
 </div>
 
-<div class="row">
-  <div class="col-6 mx-auto">
-    <ul class="list-unstyled list-group">
-      <li ui-sref="katakanaShow({ id: test.id })" ng-repeat="test in vm.tests | limitTo : 1:21" class="list-group-item list-group-item-action">
-        <div class="col-12">
-          <h4 class="testname">Test: {{ test.name }}</h4>
+<div class="row indexRow">
+  <div class="col-12 col-sm-6" ng-repeat="test in vm.tests | limitTo : 10:11">
+    <div class="card list-group-item list-group-item-action indexCard" ui-sref="katakanaShow({ id: test.id })">
+      <div class="row">
+        <div class="col-3">
+          <img src="{{ test.image }}" alt="" class="indexCharacterImg">
         </div>
-      </li>
-    </ul>
+        <div class="col-9 indexContainer">
+          <ul class="list-unstyled list-inline float-right">
+            <li ng-repeat="character in test.characters" class="list-inline-item">
+              <p class="index-character characterSymbol">{{ character.symbol }}</p>
+              <p class="index-character characterRomaji ">{{ character.romaji }}</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row indexTest">
+  <div class="col-10 col-sm-8 col-md-4 mx-auto">
+    <div class="card list-group-item list-group-item-action" ui-sref="katakanaShow({ id: test.id })">
+      <ul class="list-unstyled text-center">
+        <li  ng-repeat="test in vm.tests | limitTo : 1:21" class="">
+          <h4 class="testname">Take the Test  </h4>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>

@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title>NihonGo!</title>
   <base href="/" />
+  <link href="https://fonts.googleapis.com/earlyaccess/sawarabimincho.css" rel="stylesheet" />
   <!-- inject:js -->
   <!-- endinject -->
   <!-- inject:css -->
@@ -11,21 +12,21 @@
 </head>
 <body ng-controller="MainCtrl as main">
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" ui-sref="homepage">
-        <img src="http://www.dartmouth.edu/~introjpn/text/hiragana/a.jpg" width="30" height="30" alt="">
+    <nav class="navbar navbar-expand-lg navbar-custom">
+      <a class="navbar-brand text-white" ui-sref="homepage">
+        <img src="/images/a.png" width="30" height="30" alt="">
         NihonGo!
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav mr-auto ">
           <li ng-show="main.user" class="nav-item active">
-            <a class="nav-link" ui-sref="index">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link text-white" ui-sref="usersShow({ id: main.user.id })">Home <span class="sr-only">(current)</span></a>
           </li>
           <li ng-show="main.user" class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle text-white" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Study
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -37,13 +38,13 @@
         </ul>
         <ul class="navbar-nav">
           <li ng-show="main.user" class="nav-item active">
-            <a class="nav-link" ng-click="main.logout()">Logout <span class="sr-only">(current)</span></a>
+            <a class="nav-link text-white" ng-click="main.logout()">Logout <span class="sr-only">(current)</span></a>
           </li>
           <li ng-hide="main.user" class="nav-item active">
-            <a class="nav-link" ui-sref="login">Login <span class="sr-only">(current)</span></a>
+            <a class="nav-link text-white" ui-sref="login">Login <span class="sr-only">(current)</span></a>
           </li>
           <li ng-hide="main.user" class="nav-item active">
-            <a class="nav-link" ui-sref="register">Register <span class="sr-only">(current)</span></a>
+            <a class="nav-link text-white" ui-sref="register">Register <span class="sr-only">(current)</span></a>
           </li>
         </ul>
       </div>

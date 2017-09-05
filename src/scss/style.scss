@@ -1,4 +1,29 @@
 @import 'characterindex';
+@import 'characterShow';
 @import 'user-home';
 @import 'login';
 @import 'register';
+
+body {
+  background-color: #2e4355;
+}
+
+.card {
+    background-color: #1c2833;
+}
+
+.navbar-custom {
+  background-color: #2e4355;
+}
+//
+// .container {
+//   border: 1px solid magenta;
+// }
+//
+// div {
+//   border: 1px solid red;
+// }
+//
+// li {
+//   border: 1px solid red;
+// }
