@@ -3,3 +3,95 @@
   // border: 1px solid black;
   margin: 20px 0;
 }
+
+.contentRowUser {
+  position: relative;
+  padding-top: 160px;
+}
+
+.categorySelect {
+  img {
+
+  }
+
+  .card {
+    background-color: none;
+  }
+}
+
+.cardText{
+  position: relative;
+  width: 100%;
+  // background-image: url('/images/Circle_logos.jpg');
+  h1 {
+    position: absolute;
+    font-size: 4em;
+    top: 38%;
+    left: 10%;
+    color: #2e4355;
+    cursor: pointer;
+  }
+  .wordsText {
+    position: absolute;
+    font-size: 4em;
+    top: 38%;
+    left: 20%;
+    color: #2e4355;
+  }
+  p {
+    position: absolute;
+    top: 45%;
+    left: 0%;
+    text-align: center;
+    color: #2e4355;
+  }
+  img {
+    width: 320px;
+    height: 320px;
+    cursor: pointer;
+  }
+}
+
+// ******** FLIP CARDS *******
+
+.flip-container {
+	perspective: 1000px;
+}
+	/* flip the pane when hovered */
+	.flip-container:hover .flipper, .flip-container.hover .flipper {
+		transform: rotateY(180deg);
+	}
+
+.flip-container, .front, .back {
+	width: 320px;
+	height: 320px;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+}

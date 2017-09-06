@@ -1,57 +1,77 @@
-
-
-<div class="row mx-auto">
-  <div class="col-lg-4">
-    <div class="card">
-      <img class="card-img-top" src="images/a.png" alt="Card image cap">
-      <div class="card-body mx-auto">
-        <h4 class="card-title text-white">Hiragana</h4>
-        <!-- <p class="card-text text-white">Study Hiragana, and when you're ready take a test to see how many you can remember!</p> -->
-        <a ui-sref="hiraganaIndex" class="btn btn-primary">Go Study!</a>
+<div class="container">
+  <div class="row mx-auto contentRowUser">
+    <div class="col-sm-12 col-lg-4">
+      <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+          <div class="front">
+              <img  class="card-img-top " src="images/a.png" alt="Card image cap">
+          </div>
+          <div class="back">
+            <div class="cardText">
+              <img ui-sref="hiraganaIndex" src="images/Circle_logos.png" alt="">
+              <h1 ui-sref="hiraganaIndex">Hiragana</h1>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="col-lg-4">
-    <div class="card" >
-      <img class="card-img-top" src="images/k-a.png" alt="Card image cap">
-      <div class="card-body mx-auto">
-        <h4 class="card-title text-white">Katakana</h4>
-        <!-- <p class="card-text">Once you're confortable with your Hiragana, try and tackle Katakana.</p> -->
-        <a ui-sref="katakanaIndex" class="btn btn-primary">Go Study!</a>
+    <div class="col-sm-12 col-lg-4">
+      <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+          <div class="front">
+              <img ui-sref="katakanaIndex" class="card-img-top " src="images/k-a.png" alt="Card image cap">
+          </div>
+          <div class="back">
+            <div class="cardText">
+              <img ui-sref="katakanaIndex" src="images/Circle_logos.png" alt="">
+              <h1 ui-sref="katakanaIndex">Katakana</h1>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="col-lg-4">
-    <div class="card" >
-      <img class="card-img-top" src="images/aka.png" alt="Card image cap">
-      <div class="card-body mx-auto">
-        <h4 class="card-title text-white text-center">Words</h4>
-        <!-- <p class="card-text">Take what you've learn't and put it to practice with some words. </p> -->
-        <a ui-sref="wordsIndex" class="btn btn-primary">Go Study!</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="row profile">
-  <div class="col-3">
-    <img src="{{ vm.user.image }}" alt="Profile picture">
-  </div>
-  <div class="col-8">
-    <h1>Welcome, {{ vm.user.username }}</h1>
-    <div class="row">
-      <div class="col-4">
-        <p>Hiragana Test - Top Scores</p>
-        <ul>
-          <li ng-repeat="score in vm.hiraganaScores | orderBy: $index : true |limitTo:5:0 track by $index"> {{ score }}</li>
-        </ul>
-      </div>
-      <div class="col-4">
-        <p>Katakana Test - Top Scores</p>
-        <ul>
-          <li ng-repeat="score in vm.katakanaScores | limitTo: 10:0 | orderBy track by $index"> {{ score }}</li>
-        </ul>
+    <div class="col-sm-12 col-lg-4">
+      <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+          <div class="front">
+              <img ui-sref="wordsIndex" class="card-img-top " src="images/aka.png" alt="Card image cap">
+          </div>
+          <div class="back">
+            <div class="cardText">
+              <img ui-sref="wordsIndex" src="images/Circle_logos.png" alt="">
+              <h1 ui-sref="wordsIndex" class="wordsText">Words</h1>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+
+
+
+
+<!-- Put scores inside an expand -->
+<!-- <div class="row profile">
+<div class="col-3">
+<img src="{{ vm.user.image }}" alt="Profile picture">
+</div>
+<div class="col-8">
+<h1>Welcome, {{ vm.user.username }}</h1>
+<div class="row">
+<div class="col-4">
+<p>Hiragana Test - Top Scores</p>
+<ul>
+<li ng-repeat="score in vm.hiraganaScores | orderBy: $index : true |limitTo:5:0 track by $index"> {{ score }}</li>
+</ul>
+</div>
+<div class="col-4">
+<p>Katakana Test - Top Scores</p>
+<ul>
+<li ng-repeat="score in vm.katakanaScores | limitTo: 10:0 | orderBy track by $index"> {{ score }}</li>
+</ul>
+</div>
+</div>
+</div>
+</div> -->
