@@ -30,10 +30,12 @@
 
 <div class="row indexTest">
   <div class="col-10 col-sm-8 col-md-4 mx-auto">
-    <div class="card list-group-item list-group-item-action" ui-sref="katakanaShow({ id: test.id })">
+
       <ul class="list-unstyled text-center">
         <li  ng-repeat="test in vm.tests | limitTo : 1:21" class="">
-          <h4 class="testname">Take the Test  </h4>
+          <div class="card list-group-item list-group-item-action" ui-sref="katakanaShow({ id: test.id })">
+            <p class="testname">Take the test</p>
+          </div>
         </li>
       </ul>
     </div>

@@ -13,7 +13,7 @@
     <div class="col-12 col-sm-6" ng-repeat="test in vm.tests | limitTo : 10:0">
       <div class="card list-group-item list-group-item-action indexCard" ui-sref="hiraganaShow({ id: test.id })">
         <div class="row">
-          <div class="col-3">
+          <div class="col-3 image-container">
             <img src="{{ test.image }}" alt="" class="indexCharacterImg">
           </div>
           <div class="col-9 indexContainer">
@@ -31,14 +31,16 @@
 
   <div class="row indexTest">
     <div class="col-10 col-sm-8 col-md-4 mx-auto">
-      <div class="card list-group-item list-group-item-action" ui-sref="hiraganaShow({ id: test.id })">
-        <ul class="list-unstyled text-center">
-          <li  ng-repeat="test in vm.tests | limitTo : 1:10" class="">
-            <p class="testname">Take the test</p>
 
-          </li>
-        </ul>
-      </div>
+      <ul class="list-unstyled text-center">
+        <li  ng-repeat="test in vm.tests | limitTo : 1:10" class="">
+          <div class="card list-group-item list-group-item-action" ui-sref="hiraganaShow({ id: test.id })">
+            <p class="testname">Take the test</p>
+          </div>
+        </li>
+      </ul>
+
+
     </div>
   </div>
 </div>

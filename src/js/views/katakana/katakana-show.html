@@ -1,61 +1,46 @@
-<div class="container containerShow">
 
-
-  <div class="col-4 mx-auto testShow">
-
-    <!-- TITLE -->
-    <div class="row">
-      <div class="col mx-auto">
-        <h1 class="text-center">Katakana: {{ vm.test.name }}</h1>
+<div class="container showfullcontainer">
+  <div class="row">
+    <div ng-class="{ pulse: vm.correct }" class="scoreCircle animated">
+      <p>{{vm.points}}</p>
+    </div>
+    <div ng-class="{ shake: vm.wrong }" class="triesCircle animated">
+      <p>{{vm.tries}}</p>
+    </div>
+    <div class="result">
+      <p>{{vm.result}}</p>
+    </div>
+    <div class="carouselContainer">
+      <div class="carousel">
+        <div class="item a"><p class="text-center characterSymbolShow">{{ vm.question }}</p></div>
+        <div class="item b"><p class="text-center characterSymbolShow">{{ vm.question }}</p></div>
+        <div class="item c"><p class="text-center characterSymbolShow">{{ vm.question }}</p></div>
+        <div class="item d"><p class="text-center characterSymbolShow">{{ vm.question }}</p></div>
+        <div class="item e"><p class="text-center characterSymbolShow">{{ vm.question }}</p></div>
+        <div class="item f"><p class="text-center characterSymbolShow">{{ vm.question }}</p></div>
       </div>
     </div>
+  </div>
 
-        <!-- QUESTION -->
-    <div class="row">
-      <div class="col-sm-12">
-        <p class="text-center characterSymbolShow">{{ vm.question }}</p>
-      </div>
-      <!-- ANSWER -->
-      <div class="col-8 mx-auto">
-        <form ng-submit="vm.checkAnswer()">
-          <div class="form-group">
-            <input class="form-control" type="text" name="" value="" ng-model="vm.answer">
-          </div>
-        </form>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12 mx-auto">
-        <h1>{{ vm.result }}</h1>
-      </div>
-    </div>
-    <!-- RIGHT OR WRONG -->
-
-    <!-- SCORE -->
-    <div class="row">
-      <div class="col-12 text-center">
-        <h1 >Score: {{ vm.points }} / {{ vm.tries }}</h1>
-      </div>
-    </div>
-
-    <!-- HELPER -->
-    <div class="row">
-      <div class="col-sm-12 col-md-8 mx-auto">
-        <div class="pos-f-t">
-          <div class="collapse" id="navbarToggleExternalContent">
-            <div class="bg-dark p-4">
-              <ul  class="list-unstyled list-inline text-center">
-                <li ng-repeat="character in vm.test.characters" class="text-white list-inline-item">{{ character.symbol }} = {{ character.romaji }}, </li>
-              </ul>
-            </div>
-          </div>
-          <nav class="navbar navbar-dark bg-dark">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          </nav>
+  <div class="row">
+    <div class="showInput mx-auto">
+      <form ng-submit="vm.checkAnswer()">
+        <div class="form-group mx-auto">
+          <input class="form-control next" type="text" name="" value="" ng-model="vm.answer">
         </div>
-      </div>
+      </form>
+    </div>
+  </div>
+  <div id="sidebar">
+    <div id="links">
+      <ul id="link_list" class="list-unstyled list-inline text-center align-middle">
+        <div class="col-12 cheatContainer">
+          <li ng-repeat="character in vm.test.characters" class="text-white list-inline-item">{{ character.symbol }} - {{ character.romaji }} </li>
+        </div>
+      </ul>
+    </div>
+    <div id="toggle">
+      <p id="cheat">Tips</p>
     </div>
   </div>
 </div>

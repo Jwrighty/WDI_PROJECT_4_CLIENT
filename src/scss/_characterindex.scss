@@ -19,27 +19,29 @@
   }
 }
 
+.image-container {
+  // line-height: 103px;
+}
+
 
 .indexRow {
+  ul {
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
 
    .indexCard {
      margin-bottom: 10px;
    }
 
-  // .indexContainer {
-  //   position: relative;
-  //   // display: table-cell;
-  //   vertical-align: middle;
-  //   position: absolute;
-  //   top: 50%;
-  //   left: 50%;
-  //   transform: translate(-50%,-50%);
-  //   height: 50%;
-  //   width: 50%;
-  // }
+  .indexContainer {
+    // margin-top: 15px;
+  }
+
   .characterSymbol{
     font-family: "Sawarabi Mincho";
     text-align: center;
+    line-height: 50px;
     // margin-bottom: 0px;
     padding-left: 10px;
   }
@@ -101,7 +103,7 @@
   .testname {
     font-size: 2em;
     font-family: "Sawarabi Mincho";
-    margin-top: 10px;
+    // margin-top: 10px;
     padding: 0;
   }
 }
