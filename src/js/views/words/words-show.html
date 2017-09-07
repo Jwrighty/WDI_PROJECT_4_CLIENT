@@ -12,12 +12,12 @@
     </div>
     <div class="carouselContainer">
       <div class="carousel">
-        <div class="item a"><p class="text-center characterSymbolShow">{{ vm.question }}</p></div>
-        <div class="item b"><p class="text-center characterSymbolShow">{{ vm.question }}</p></div>
-        <div class="item c"><p class="text-center characterSymbolShow">{{ vm.question }}</p></div>
-        <div class="item d"><p class="text-center characterSymbolShow">{{ vm.question }}</p></div>
-        <div class="item e"><p class="text-center characterSymbolShow">{{ vm.question }}</p></div>
-        <div class="item f"><p class="text-center characterSymbolShow">{{ vm.question }}</p></div>
+        <div class="item a"><p class="text-center characterSymbolShow wordSymbolShow" >{{ vm.question }} <br>{{vm.meaning}}</p></div>
+        <div class="item b"><p class="text-center characterSymbolShow wordSymbolShow" >{{ vm.question }} <br>{{vm.meaning}}</p></div>
+        <div class="item c"><p class="text-center characterSymbolShow wordSymbolShow" >{{ vm.question }} <br>{{vm.meaning}}</p></div>
+        <div class="item d"><p class="text-center characterSymbolShow wordSymbolShow" >{{ vm.question }} <br>{{vm.meaning}}</p></div>
+        <div class="item e"><p class="text-center characterSymbolShow wordSymbolShow" >{{ vm.question }} <br>{{vm.meaning}}</p></div>
+        <div class="item f"><p class="text-center characterSymbolShow wordSymbolShow" >{{ vm.question }} <br>{{vm.meaning}}</p></div>
       </div>
     </div>
   </div>
@@ -33,9 +33,9 @@
   </div>
   <div id="sidebar">
     <div id="links">
-      <ul id="link_list" class="list-unstyled list-inline text-center align-middle">
+      <ul id="link_list" class="list-unstyled list-inline">
         <div class="col-12 cheatContainer">
-              <li ng-repeat="word in vm.test.words" class="text-white list-inline-item">{{ word.symbol }} = {{ word.meaning }}, </li>
+              <li ng-repeat="word in vm.test.words" class="text-white list-inline-item" style="font-size: 1.2vw;">{{ word.symbol }} - {{ word.romaji }} - {{ word.meaning }} </li>
         </div>
       </ul>
     </div>

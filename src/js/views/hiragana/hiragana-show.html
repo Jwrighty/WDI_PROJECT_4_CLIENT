@@ -1,10 +1,10 @@
 
 <div class="container showfullcontainer">
   <div class="row">
-    <div ng-class="{ pulse: vm.correct }" class="scoreCircle animated">
+    <div ng-class="{ bounce: vm.correct }" class="scoreCircle animated">
       <p>{{vm.points}}</p>
     </div>
-    <div ng-class="{ shake: vm.wrong }" class="triesCircle animated">
+    <div ng-hide="vm.isaTest"  ng-class="{ shake: vm.wrong }" class="triesCircle animated">
       <p>{{vm.tries}}</p>
     </div>
     <div class="result">

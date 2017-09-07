@@ -4,6 +4,12 @@
   line-height: 1.2em;
 }
 
+.wordSymbolShow {
+  font-size: 4vw;
+  line-height: 1em;
+  padding-top: 30%;
+}
+
 .containerShow {
   padding-top: 90px;
 }
@@ -19,7 +25,15 @@
   padding-top: 330px;
   width: 250px;
   z-index: 1;
+  text-align: center;
+  input {
+    text-align: center;
+  }
 }
+
+
+
+
 
 // ******* CAROUSEL ********
 
@@ -47,11 +61,15 @@
   width: 250px;
   height: 250px;
   line-height: 200px;
-  font-size: 5em;
+  font-size: 3em;
   text-align: center;
-  color: #000;
-  opacity: 0.95;
-  border-radius: 10px;
+  color: #2d2d2d;
+  // opacity: 0.9;
+  border-radius: 50%;
+  border: 5px solid #2e4355;
+
+  // box-shadow: 0px 5px 5px;
+
 }
 
 .a {
@@ -140,9 +158,9 @@
 
 #links {
   position: relative;
-  padding-left: 100px;
+  // padding-left: 100px;
   float: left;
-  text-align: center;
+
   overflow: hidden;
 }
 
@@ -185,18 +203,31 @@
 
 .selected {
   // color: white;
-  filter: blur(27px);
-  opacity: 0.8;
-  // color: blue;
+  background-color: #2d2d2d;
+  border-radius: 50%;
+  overflow: hidden;
+  // filter: blur(25px);
+  opacity: 0.3;
+  color: #2d2d2d;
+
+}
+.selectedWord {
+  // color: white;
+  background-color: #2d2d2d;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  // filter: blur(25px);
+  opacity: 0.3;
+  color: #2d2d2d;
+
 }
 
-// .correct {
-//   background: green;
-// }
-//
-// .wrong {
-//   background: red;
-// }
+.meaning {
+    // filter: blur(10px);
+    // font-size: 2.2vw;
+}
+
 
 p {
   margin-bottom: 0rem !important;

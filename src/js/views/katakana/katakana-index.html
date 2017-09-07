@@ -8,28 +8,28 @@
 <div class="container">
 
 
-<div class="row indexRow">
-  <div class="col-12 col-sm-6" ng-repeat="test in vm.tests | limitTo : 10:11">
-    <div class="card list-group-item list-group-item-action indexCard" ui-sref="katakanaShow({ id: test.id })">
-      <div class="row">
-        <div class="col-3">
-          <img src="{{ test.image }}" alt="" class="indexCharacterImg">
-        </div>
-        <div class="col-9 indexContainer">
-          <ul class="list-unstyled list-inline float-right">
-            <li ng-repeat="character in test.characters" class="list-inline-item">
-              <p class="index-character characterSymbol">{{ character.symbol }}</p>
-              <p class="index-character characterRomaji ">{{ character.romaji }}</p>
-            </li>
-          </ul>
+  <div class="row indexRow">
+    <div class="col-12 col-sm-6" ng-repeat="test in vm.tests | limitTo : 10:11">
+      <div class="card list-group-item list-group-item-action indexCard" ui-sref="katakanaShow({ id: test.id })">
+        <div class="row">
+          <div class="col-3">
+            <img src="{{ test.image }}" alt="" class="indexCharacterImg">
+          </div>
+          <div class="col-9 indexContainer">
+            <ul class="list-unstyled list-inline float-right">
+              <li ng-repeat="character in test.characters" class="list-inline-item">
+                <p class="index-character characterSymbol">{{ character.symbol }}</p>
+                <p class="index-character characterRomaji ">{{ character.romaji }}</p>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<div class="row indexTest">
-  <div class="col-10 col-sm-8 col-md-4 mx-auto">
+  <div class="row indexTest">
+    <div class="col-10 col-sm-8 col-md-4 mx-auto">
 
       <ul class="list-unstyled text-center">
         <li  ng-repeat="test in vm.tests | limitTo : 1:21" class="">
@@ -40,5 +40,4 @@
       </ul>
     </div>
   </div>
-</div>
 </div>

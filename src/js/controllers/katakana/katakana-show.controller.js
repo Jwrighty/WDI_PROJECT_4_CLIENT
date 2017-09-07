@@ -21,7 +21,7 @@ function KatakanaShowCtrl(Test, $stateParams, Score, CurrentUserService, $scope)
   .$promise
   .then((data) => {
     vm.test = data;
-    console.log(vm.test);
+
     setQuestion();
   });
 
@@ -32,14 +32,12 @@ function KatakanaShowCtrl(Test, $stateParams, Score, CurrentUserService, $scope)
       .save({ score: vm.score })
       .$promise
       .then(() => {
-        console.log('End of test, you scored', vm.points );
-        vm.result = `Well done you got ${vm.points} correct`;
+
+        vm.result = `You got ${vm.points} correct`;
       });
     } else {
       vm.chosenCharacter = vm.test.characters[Math.floor(Math.random() * vm.test.characters.length)];
       vm.question = vm.chosenCharacter.symbol;
-
-      console.log('SONG 2');
 
       $('.characterSymbolShow').each(() => {
         $('.characterSymbolShow').removeClass('selected');
@@ -48,7 +46,7 @@ function KatakanaShowCtrl(Test, $stateParams, Score, CurrentUserService, $scope)
       $('.characterSymbolShow').each((i, elm) => {
         if (i !== vm.index) {
           $(elm).addClass('selected');
-          console.log('index is  ' + i);
+
         }
       });
       vm.index++;
@@ -103,7 +101,7 @@ function KatakanaShowCtrl(Test, $stateParams, Score, CurrentUserService, $scope)
   }
 
   function checkAnswer(){
-    if (vm.test.name === 'All Hiragana') {
+    if (vm.test.name === 'All Katakana') {
       checkAnswerTest();
     } else {
       checkAnswerPractice();
@@ -114,7 +112,7 @@ function KatakanaShowCtrl(Test, $stateParams, Score, CurrentUserService, $scope)
   var carousel = $('.carousel'),currdeg  = 0;
 
   function rotate(){
-    console.log(`_+_+_+_${currdeg}`);
+
 
     currdeg = currdeg - 60;
 

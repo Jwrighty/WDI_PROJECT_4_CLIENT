@@ -7,7 +7,6 @@
 
 body {
   background-color: #2e4355;
-
   background: red; /* For browsers that do not support gradients */
   /* For Safari 5.1 to 6.0 */
   background: -webkit-linear-gradient(left,#20303d, #2e4355, #20303d);
@@ -21,12 +20,12 @@ body {
 
 }
 
-main {
-
+p {
+  // color: #2d2d2d;
 }
 
 .card {
-    background-color: #1c2833;
+  background-color: #1c2833;
 }
 
 .navbar-custom {
@@ -41,15 +40,46 @@ main {
     padding-right: 20px;
   }
 }
-//
-// .container {
-//   border: 1px solid magenta;
-// }
-//
-// div {
-//   border: 1px solid red;
-// }
-//
-// li {
-//   border: 1px solid red;
-// }
+
+.homeJumbotron {
+  width: 100%;
+  background-image: url('/images/fuji.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+  margin-bottom: 0;
+  h1 {
+    font-size: 7em;
+    font-weight: bold;
+    position: relative;
+    float: left;
+    padding-top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.categoryJumbotron {
+  width: 100%;
+  background-image: url('/images/categories.jpg');
+  height: 100vh;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 100px;
+  // border-top: 2px solid white;
+  // border-bottom: 2px solid white;
+}
+
+.infoJumbotron {
+  width: 100%;
+  background-image: url('/images/info.jpg');
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 572px;
+  margin-top: 70px;
+  margin-bottom: 70px;
+}

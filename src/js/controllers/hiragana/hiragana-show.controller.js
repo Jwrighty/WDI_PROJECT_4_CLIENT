@@ -15,15 +15,30 @@ function HiraganaShowCtrl(Test, $stateParams, Score, CurrentUserService, $scope)
   vm.index = 0;
   vm.correct = false;
   vm.wrong   = false;
+  vm.isaTest = false;
+
+
+
 
   Test
   .get({ id: $stateParams.id})
   .$promise
   .then((data) => {
     vm.test = data;
-    console.log(vm.test);
+    testCheck();
     setQuestion();
   });
+
+
+  function testCheck() {
+    if (vm.test.name === 'All Hiragana') {
+      vm.isaTest = true;
+      console.log(vm.isaTest);
+    } else {
+      vm.isaTest = false;
+      console.log(vm.isaTest);
+    }
+  }
 
   function setQuestion() {
     if (vm.test.characters.length < 1) {
@@ -32,14 +47,12 @@ function HiraganaShowCtrl(Test, $stateParams, Score, CurrentUserService, $scope)
       .save({ score: vm.score })
       .$promise
       .then(() => {
-        console.log('End of test, you scored', vm.points );
-        vm.result = `Well done you got ${vm.points} correct`;
+        vm.result = `You got ${vm.points} correct`;
       });
     } else {
       vm.chosenCharacter = vm.test.characters[Math.floor(Math.random() * vm.test.characters.length)];
       vm.question = vm.chosenCharacter.symbol;
 
-      console.log('SONG 2');
 
       $('.characterSymbolShow').each(() => {
         $('.characterSymbolShow').removeClass('selected');
@@ -48,7 +61,6 @@ function HiraganaShowCtrl(Test, $stateParams, Score, CurrentUserService, $scope)
       $('.characterSymbolShow').each((i, elm) => {
         if (i !== vm.index) {
           $(elm).addClass('selected');
-          console.log('index is  ' + i);
         }
       });
       vm.index++;
@@ -109,12 +121,13 @@ function HiraganaShowCtrl(Test, $stateParams, Score, CurrentUserService, $scope)
       checkAnswerPractice();
     }
   }
+
+
   // ***** Carousel *****
 
   var carousel = $('.carousel'),currdeg  = 0;
 
   function rotate(){
-    console.log(`_+_+_+_${currdeg}`);
 
     currdeg = currdeg - 60;
 

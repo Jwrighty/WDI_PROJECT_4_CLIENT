@@ -21,34 +21,32 @@ function WordsShowCtrl(Test, $stateParams, Score, CurrentUserService, $scope) {
   .$promise
   .then((data) => {
     vm.test = data;
-    console.log(vm.test);
     setQuestion();
   });
 
+
   function setQuestion() {
-    if (vm.test.characters.length < 1) {
+    if (vm.test.words.length < 1) {
       vm.score = { user_id: CurrentUserService.currentUser.id, test_id: vm.test.id , value: vm.points };
       Score
       .save({ score: vm.score })
       .$promise
       .then(() => {
-        console.log('End of test, you scored', vm.points );
-        vm.result = `Well done you got ${vm.points} correct`;
+        vm.result = `You got ${vm.points} correct`;
       });
     } else {
-      vm.chosenCharacter = vm.test.characters[Math.floor(Math.random() * vm.test.characters.length)];
-      vm.question = vm.chosenCharacter.symbol;
+      vm.chosenWord = vm.test.words[Math.floor(Math.random() * vm.test.words.length)];
+      vm.question = vm.chosenWord.symbol;
+      vm.meaning = vm.chosenWord.meaning;
 
-      console.log('SONG 2');
 
       $('.characterSymbolShow').each(() => {
-        $('.characterSymbolShow').removeClass('selected');
+        $('.characterSymbolShow').removeClass('selectedWord');
       });
 
       $('.characterSymbolShow').each((i, elm) => {
         if (i !== vm.index) {
-          $(elm).addClass('selected');
-          console.log('index is  ' + i);
+          $(elm).addClass('selectedWord');
         }
       });
       vm.index++;
@@ -59,9 +57,9 @@ function WordsShowCtrl(Test, $stateParams, Score, CurrentUserService, $scope) {
   }
 
   function checkAnswerTest() {
-    const index = vm.test.characters.indexOf(vm.chosenCharacter);
-    vm.test.characters.splice(index, 1);
-    if (vm.answer === vm.chosenCharacter.romaji) {
+    const index = vm.test.words.indexOf(vm.chosenWord);
+    vm.test.words.splice(index, 1);
+    if (vm.answer === vm.chosenWord.romaji) {
       vm.points += 1;
       vm.tries +=1;
       vm.answer = '';
@@ -76,9 +74,8 @@ function WordsShowCtrl(Test, $stateParams, Score, CurrentUserService, $scope) {
     }
   }
 
-
   function checkAnswerPractice() {
-    if (vm.answer === vm.chosenCharacter.romaji) {
+    if (vm.answer === vm.chosenWord.romaji) {
       vm.points += 1;
       vm.tries +=1;
       vm.answer = '';
@@ -103,7 +100,7 @@ function WordsShowCtrl(Test, $stateParams, Score, CurrentUserService, $scope) {
   }
 
   function checkAnswer(){
-    if (vm.test.name === 'All Hiragana') {
+    if (vm.test.name === 'All Words') {
       checkAnswerTest();
     } else {
       checkAnswerPractice();
@@ -114,7 +111,6 @@ function WordsShowCtrl(Test, $stateParams, Score, CurrentUserService, $scope) {
   var carousel = $('.carousel'),currdeg  = 0;
 
   function rotate(){
-    console.log(`_+_+_+_${currdeg}`);
 
     currdeg = currdeg - 60;
 
