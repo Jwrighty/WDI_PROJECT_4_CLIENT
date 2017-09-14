@@ -5,9 +5,9 @@
 }
 
 .wordSymbolShow {
-  font-size: 4vw;
+  font-size: 2.5vw;
   line-height: 1em;
-  padding-top: 30%;
+  padding-top: 35%;
 }
 
 .containerShow {
@@ -22,7 +22,7 @@
 }
 
 .showInput {
-  padding-top: 330px;
+  padding-top: 290px;
   width: 250px;
   z-index: 1;
   text-align: center;
@@ -32,13 +32,10 @@
 }
 
 
-
-
-
 // ******* CAROUSEL ********
 
 .carouselContainer {
-  padding-top: 150px;
+  padding-top: 120px;
   margin: 0 auto;
   width: 250px;
   height: 200px;
@@ -102,13 +99,13 @@
   border-radius: 50%;
   width: 70px;
   height: 70px;
-  position: absolute;
-  top: 30%;
-  left: 15%;
+  margin: 0 auto;
+
   p {
     text-align: center;
     font-size: 2em;
     margin-top: 10px;
+    padding-top: 10px;
   }
 }
 
@@ -117,13 +114,12 @@
   border-radius: 50%;
   width: 70px;
   height: 70px;
-  position: absolute;
-  top: 45%;
-  left: 15%;
+  margin: 0 auto;
   p {
     text-align: center;
     font-size: 2em;
     margin-top: 10px;
+    padding-top: 10px;
   }
 
   // ********* Puls animate
@@ -149,9 +145,19 @@
   position: absolute;
   display: block;
   height: 100%;
-  width: 350px;
+  width: 280px;
   top: 0px;
-  left: -350px;
+  left: -280px;
+  background-color: #34495e;
+  box-shadow: 5px 5px 10px;
+}
+#sidebarWords {
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 475px;
+  top: 0px;
+  left: -475px;
   background-color: #34495e;
   box-shadow: 5px 5px 10px;
 }
@@ -160,8 +166,10 @@
   position: relative;
   // padding-left: 100px;
   float: left;
-
   overflow: hidden;
+  #linksul {
+    margin-left: 30px;
+  }
 }
 
 #link_list {
@@ -224,8 +232,8 @@
 }
 
 .meaning {
-    // filter: blur(10px);
-    // font-size: 2.2vw;
+  // filter: blur(10px);
+  // font-size: 2.2vw;
 }
 
 
@@ -240,5 +248,5 @@ p {
 }
 
 ::-webkit-scrollbar {
-display: none;
+  display: none;
 }

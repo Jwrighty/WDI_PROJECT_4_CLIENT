@@ -125,13 +125,13 @@ function WordsShowCtrl(Test, $stateParams, Score, CurrentUserService, $scope) {
   // ****** Side Nav
 
   $('#toggle').click(function(){
-    var w = $('#sidebar').width();
-    var pos = $('#sidebar').offset().left;
+    var w = $('#sidebarWords').width();
+    var pos = $('#sidebarWords').offset().left;
 
     if(pos === 0){
-      $('#sidebar').animate({'left': -w}, 'slow');
+      $('#sidebarWords').animate({'left': -w}, 'slow');
     } else {
-      $('#sidebar').animate({'left': '0'}, 'slow');
+      $('#sidebarWords').animate({'left': '0'}, 'slow');
     }
 
   });

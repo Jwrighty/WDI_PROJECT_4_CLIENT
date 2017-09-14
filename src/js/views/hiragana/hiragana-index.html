@@ -1,12 +1,9 @@
-
-
 <div class="jumbotron jumbotron-fluid indexJumbotron">
   <div class="container ">
     <h1 class="display-3 text-white">Hiragana</h1>
     <p class="lead text-white">Practice the characters below and when you're ready, test yourself on the full set of 46 characters!</p>
   </div>
 </div>
-
 
 <div class="container">
   <div class="row indexRow">
@@ -31,7 +28,6 @@
 
   <div class="row indexTest">
     <div class="col-10 col-sm-8 col-md-4 mx-auto">
-
       <ul class="list-unstyled text-center">
         <li  ng-repeat="test in vm.tests | limitTo : 1:10" class="">
           <div class="card list-group-item list-group-item-action" ui-sref="hiraganaShow({ id: test.id })">
@@ -39,8 +35,6 @@
           </div>
         </li>
       </ul>
-
-
     </div>
   </div>
 </div>

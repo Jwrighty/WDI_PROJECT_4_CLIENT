@@ -1,7 +1,7 @@
 
 <div class="container showfullcontainer">
   <div class="row">
-    <div ng-class="{ pulse: vm.correct }" class="scoreCircle animated">
+    <div ng-class="{ bounce: vm.correct }" class="scoreCircle animated">
       <p>{{vm.points}}</p>
     </div>
     <div ng-class="{ shake: vm.wrong }" class="triesCircle animated">
@@ -35,7 +35,7 @@
     <div id="links">
       <ul id="link_list" class="list-unstyled list-inline text-center align-middle">
         <div class="col-12 cheatContainer">
-          <li ng-repeat="character in vm.test.characters" class="text-white list-inline-item">{{ character.symbol }} - {{ character.romaji }} </li>
+          <li ng-repeat="character in vm.test.characters" class="text-white list-inline-item" id="linksul">{{ character.symbol }} - {{ character.romaji }} </li>
         </div>
       </ul>
     </div>

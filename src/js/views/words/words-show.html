@@ -1,15 +1,8 @@
 
 <div class="container showfullcontainer">
   <div class="row">
-    <div ng-class="{ pulse: vm.correct }" class="scoreCircle animated">
-      <p>{{vm.points}}</p>
-    </div>
-    <div ng-class="{ shake: vm.wrong }" class="triesCircle animated">
-      <p>{{vm.tries}}</p>
-    </div>
-    <div class="result">
-      <p>{{vm.result}}</p>
-    </div>
+
+
     <div class="carouselContainer">
       <div class="carousel">
         <div class="item a"><p class="text-center characterSymbolShow wordSymbolShow" >{{ vm.question }} <br>{{vm.meaning}}</p></div>
@@ -31,7 +24,22 @@
       </form>
     </div>
   </div>
-  <div id="sidebar">
+  <div class="row justify-content-center">
+    <div class="col-1">
+      <div ng-class="{ bounce: vm.correct }" class="scoreCircle animated">
+        <p>{{vm.points}}</p>
+      </div>
+    </div>
+    <div class="col-1">
+      <div ng-hide="vm.isaTest"  ng-class="{ shake: vm.wrong }" class="triesCircle animated">
+        <p>{{vm.tries}}</p>
+      </div>
+    </div>
+    <div class="result">
+      <p>{{vm.result}}</p>
+    </div>
+  </div>
+  <div id="sidebarWords">
     <div id="links">
       <ul id="link_list" class="list-unstyled list-inline">
         <div class="col-12 cheatContainer">
