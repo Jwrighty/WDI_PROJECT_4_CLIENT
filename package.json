@@ -4,6 +4,7 @@
   "description": "Project",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "postinstall": "bower install && gulp deploy"
   },
   "author": "Alex Chin <alex@alexchin.co.uk>",
@@ -51,7 +52,7 @@
   },
   "dependencies": {
     "express": "^4.14.0",
-    "bower": "^1.7.10",
+    "bower": "^1.7.10"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
