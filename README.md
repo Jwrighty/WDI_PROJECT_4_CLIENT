@@ -1,6 +1,6 @@
 # WDI-PROJECT-4-CLIENT - NihinGo!
 
-Heroku: [https://nihongo-client.herokuapp.com/]()
+[Heroku](https://nihongo-client.herokuapp.com/)
 
 **Skills**: AngularJS, Ruby, Rails, JavaScript, Express, Node.js, HTML5, PostgreSQL, SCSS, Bootstrap, Bower, JWT.
 
